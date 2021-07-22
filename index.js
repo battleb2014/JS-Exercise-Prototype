@@ -98,6 +98,15 @@ Car.prototype.fill = function(gallons) {
   this.tank += gallons;
 }
 
+Car.prototype.drive = function(distance) {
+  if(this.tank > 0){
+  this.odometer += distance;
+  (this.milesPerGallon/distance) - this.tank;
+} else {
+  return `I ran out of fuel at ${this.odometer} miles!`
+}
+}
+
 const chevy = new Car('Camaro', 10);
 chevy.fill(25);
 console.log(chevy);
@@ -129,16 +138,11 @@ Baby.prototype.play = function() {
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window binding is an error caused by using this in the global scope
+  2. Implicit binding is set based on the item to the left of the dot
+  3. New binding is when this points to an object newly created from a constructor function
+  4. Explicit binding happens when a method is called and is bound to the object that called it
 */
-
-  1. 
-  2. 
-  3. 
-  4.
 
 
 ///////// END OF CHALLENGE /////////
